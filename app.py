@@ -31,9 +31,9 @@ app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.config["UPLOAD_FOLDER"] = "./static/profile_pics"
 
-SECRET_KEY = "BINTANGSAH123"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
-TOKEN_KEY= "mytoken"
+TOKEN_KEY= os.environ.get("TOKEN_KEY")
 
 @app.route("/", methods=["GET"])
 def home():
